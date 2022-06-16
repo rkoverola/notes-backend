@@ -10,7 +10,8 @@
     "build:ui": "rm -rf build && cd ~/git/fullstackopen/part2/sandbox/ && npm run build && cp -r build ~/git/notes-backend",
     "deploy": "git push heroku main",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
-    "logs:prod": "heroku logs --tail"
+    "logs:prod": "heroku logs --tail",
+    "lint": "eslint ."
   },
   "author": "Risto Koverola",
   "license": "MIT",
@@ -21,6 +22,7 @@
     "mongoose": "^6.3.8"
   },
   "devDependencies": {
+    "eslint": "^8.17.0",
     "nodemon": "^2.0.16"
   }
 }
