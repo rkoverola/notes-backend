@@ -7,14 +7,18 @@ const middleware = require('./utils/middleware')
 const logger = require('./utils/logger')
 const mongoose = require('mongoose')
 
-logger.info('connecting to', config.MONGODB_URI)
+// DO NOT pass passwords to logger
+const destination = config.MONGODB_URI.includes('testNoteApp')
+  ? 'TEST MongoDB'
+  : 'PRODUCTION MongoDB'
+logger.info('Connecting to', destination)
 
 mongoose.connect(config.MONGODB_URI)
   .then(() => {
-    logger.info('connected to MongoDB')
+    logger.info('Connected to', destination)
   })
   .catch((error) => {
-    logger.error('error connecting to MongoDB:', error.message)
+    logger.error('Error connecting to MongoDB:', error.message)
   })
 
 app.use(cors())
