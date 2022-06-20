@@ -1,5 +1,6 @@
 const config = require('./utils/config')
 const express = require('express')
+require('express-async-errors')
 const app = express()
 const cors = require('cors')
 const notesRouter = require('./controllers/notes')
@@ -8,7 +9,7 @@ const logger = require('./utils/logger')
 const mongoose = require('mongoose')
 
 // DO NOT pass passwords to logger
-const destination = config.MONGODB_URI.includes('testNoteApp')
+const destination = String(config.MONGODB_URI).includes('testNoteApp')
   ? 'TEST MongoDB'
   : 'PRODUCTION MongoDB'
 logger.info('Connecting to', destination)
