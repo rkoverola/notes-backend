@@ -1,8 +1,8 @@
 POST http://localhost:3001/api/notes
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjYyYjE4MWU0YWQyOTAyOTUyMjRlYTI4OCIsImlhdCI6MTY1NTgwNTk5OX0.d8j0xjCwngLng12wtRtWBjYHXWumI-3U0eQshpVMIjw
 
 {
-    "content": "Boot user created this note too",
-    "important": false,
-    "userId": "62b1834c6e4c816577a023af"
+    "content": "Root user tried to create this note",
+    "important": false
 }
