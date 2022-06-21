@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production node index.js",
-    "dev": "NODE_ENV=development nodemon index.js",
+    "dev": "NODE_ENV=test nodemon index.js",
     "test": "NODE_ENV=test jest --verbose --runInBand --forceExit",
     "build:ui": "rm -rf build && cd ~/git/fullstackopen/part2/sandbox/ && npm run build && cp -r build ~/git/notes-backend",
     "deploy": "git push heroku main",
@@ -16,6 +16,7 @@
   "author": "Risto Koverola",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",

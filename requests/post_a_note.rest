@@ -2,6 +2,7 @@ POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-    "content": "VS Code REST client says hello",
-    "important": false
+    "content": "Boot user created this note too",
+    "important": false,
+    "userId": "62b1834c6e4c816577a023af"
 }
